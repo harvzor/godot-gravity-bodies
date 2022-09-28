@@ -9,8 +9,7 @@ var gravity = 6.6743 * pow(10,-11)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Body2.velocity = Vector3(0, 0, 0.002583)
-	print(sqrt(gravity * get_node("Body").mass / 20))
+	$Planet.velocity = Vector2(0, 0.125)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

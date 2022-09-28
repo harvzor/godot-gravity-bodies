@@ -1,32 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Space.gd" type="Script" id=2]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.945098, 1, 0, 1 )
-
 [sub_resource type="SphereMesh" id=2]
-radius = 0.1
-height = 0.2
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0, 0.156863, 1, 1 )
+radius = 5.0
+height = 10.0
 
 [node name="Space" type="Spatial"]
 script = ExtResource( 2 )
 
-[node name="Body" parent="." instance=ExtResource( 1 )]
-material/0 = SubResource( 1 )
-mass = 2e+06
+[node name="Sun" parent="." instance=ExtResource( 1 )]
+mass = 2e+10
 sun = true
 
-[node name="Body2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
+[node name="Planet" parent="." instance=ExtResource( 1 )]
+position = Vector2( 50, 0 )
 mesh = SubResource( 2 )
-skeleton = NodePath("../Body")
-material/0 = SubResource( 3 )
 mass = 200.0
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.984808, 0.0449435, -0.167731, 0.150384, 0.262224, 0.953217, 0.0868241, -0.96396, 0.251482, 5, 23, 16 )
+[node name="Camera" type="Camera2D" parent="."]
+current = true
