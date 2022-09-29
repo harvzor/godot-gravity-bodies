@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-#var gravity = 6.6743 * pow(10,-11)
+#var gravity = 6.6743 * pow(10,-11) # realistic gravity
 var gravity = 6.6743 * pow(10, 1)
 #export var mass = 0.0
 var velocity = Vector2.ZERO
@@ -8,14 +8,28 @@ var group = "gravity_2d_bodies"
 
 func _ready():
 	self.add_to_group(group)
+	
+func find_all_bodies(node: Node):
+	var bodies = []
+	if node == null:
+		node = get_tree().current_scene
+	
+	for sub_node in node.get_children():
+		if sub_node.is_in_group(group):
+			bodies.append(sub_node)
+		else:
+			bodies.append_array(find_all_bodies(sub_node))
+			
+	return bodies
+	
 
 func gravity_from_all_bodies():
 	var acceleration = Vector2.ZERO
-	for body in get_parent().get_children():
-		if body.is_in_group(group):
-			if body != self:
-				var acc = gravity_for_single_body(body)/mass
-				acceleration += acc
+	var bodies = find_all_bodies(null)
+	for body in bodies:
+		if body != self:
+			var acc = gravity_for_single_body(body)/mass
+			acceleration += acc
 	return acceleration
 
 func gravity_for_single_body(body):
