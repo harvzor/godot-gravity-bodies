@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Things/PlanetaryBody.tscn" type="PackedScene" id=1]
+
+[node name="Space" type="Node"]
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="Sun1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 0 )
+mass = 500.0
+linear_velocity = Vector2( 0, 50 )
+
+[node name="CollisionShape" parent="Sun1" index="0"]
+scale = Vector2( 10, 10 )
+
+[node name="Circle" parent="Sun1" index="1"]
+radius = 100.0
+
+[node name="Sun2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -200, 0 )
+mass = 500.0
+linear_velocity = Vector2( 0, -50 )
+
+[node name="CollisionShape" parent="Sun2" index="0"]
+scale = Vector2( 10, 10 )
+
+[node name="Circle" parent="Sun2" index="1"]
+radius = 100.0
+
+[node name="PlanetLagrange" parent="." instance=ExtResource( 1 )]
+mass = 1.0
+
+[node name="Planet1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -500 )
+mass = 1.0
+linear_velocity = Vector2( 110, 0 )
+
+[node name="Planet2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 500 )
+mass = 1.0
+linear_velocity = Vector2( -110, 0 )
+
+[editable path="Sun1"]
+[editable path="Sun2"]
+[editable path="PlanetLagrange"]
+[editable path="Planet1"]
+[editable path="Planet2"]

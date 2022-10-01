@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="godot-gravity-custom-2d"
-run/main_scene="res://Space.tscn"
+run/main_scene="res://Scenes/BinarySystem.tscn"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/gravity_2d/plugin.cfg" )
 
 [gui]
 
