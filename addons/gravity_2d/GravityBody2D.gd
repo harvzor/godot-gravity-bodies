@@ -2,6 +2,7 @@ extends RigidBody2D
 
 #export var gravity = 6.6743 * pow(10,-11) # realistic gravity
 export var gravity = 5000.0
+export var gravity_distance_scale = 1.0
 #export var mass = 0.0
 var group = "gravity_2d_bodies"
 
@@ -45,9 +46,14 @@ func gravity_from_all_bodies():
 	return acceleration * mass_squared * self.gravity_scale
 
 func gravity_for_single_body(body: CollisionObject2D):
-	#var distance = position.distance_to(body.position)
-	var distance = position.distance_squared_to(body.position)
-	var force = gravity * body.mass / distance
+	var force = 0.0
+	# I don't recommend setting the gravity_distance_scale to anything but 1.0 as it messes with orbit predictability.
+	if gravity_distance_scale == 0:
+		force = gravity * body.mass
+	else:
+		var distance = position.distance_squared_to(body.position)
+		force = gravity_distance_scale * gravity * body.mass / distance
+	
 	var vector = (body.position - position).normalized()
 	var force_vector = force * vector
 	return force_vector
