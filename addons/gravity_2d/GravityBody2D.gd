@@ -8,13 +8,15 @@ var group = "gravity_2d_bodies"
 
 func _ready():
 	self.add_to_group(group)
-	
-#func _physics_process(delta):
-	#self.apply_impulse(Vector2.ZERO, gravity_from_all_bodies() * delta)
 
-func _integrate_forces(state):
-	self.applied_force = gravity_from_all_bodies()
-	
+# Attepting to use _physics_process really messes with everything.
+func _process(delta):
+	self.apply_impulse(Vector2.ZERO, gravity_from_all_bodies() * delta)
+
+# Attempting to use this will mess with the lagrange point:
+#func _integrate_forces(state):
+#	self.applied_force = gravity_from_all_bodies()
+
 func find_all_bodies(node: Node):
 	var bodies = []
 	if node == null:
