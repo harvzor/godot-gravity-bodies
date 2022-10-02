@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Things/PlanetaryBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://things/PlanetaryBody.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Theme" id=1]
 
 [node name="Space" type="Node"]
 
@@ -37,6 +39,20 @@ linear_velocity = Vector2( 0, 55 )
 position = Vector2( 500, 0 )
 mass = 1.0
 linear_velocity = Vector2( 0, 50 )
+
+[node name="RichTextLabel" type="Label" parent="."]
+margin_left = -450.0
+margin_top = -600.0
+margin_right = -150.0
+margin_bottom = -450.0
+rect_scale = Vector2( 3, 3 )
+theme = SubResource( 1 )
+text = "The Sun has an initial velocity of x: -10.
+
+The Planets will orbit the Sun as it moves."
+align = 1
+valign = 1
+autowrap = true
 
 [editable path="Sun"]
 [editable path="Planet1"]

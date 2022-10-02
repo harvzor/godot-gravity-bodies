@@ -3,7 +3,6 @@ extends EditorPlugin
 
 var custom_type = "GravityBody2D"
 
-
 func _enter_tree():
 	# Initialization of the plugin goes here.
 	# Add the new type with a name, a parent type, a script and an icon.

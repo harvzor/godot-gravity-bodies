@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Things/PlanetaryBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://things/PlanetaryBody.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Theme" id=1]
 
 [node name="Space" type="Node"]
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 2.5, 2.5 )
 
 [node name="Sun1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 200, 0 )
@@ -42,6 +44,18 @@ linear_velocity = Vector2( 110, 0 )
 position = Vector2( 0, 500 )
 mass = 1.0
 linear_velocity = Vector2( -110, 0 )
+
+[node name="RichTextLabel" type="Label" parent="."]
+margin_left = -450.0
+margin_top = -750.0
+margin_right = -150.0
+margin_bottom = -600.0
+rect_scale = Vector2( 3, 3 )
+theme = SubResource( 1 )
+text = "The planet in the middle is in a \"lagrange point\". Since all other body gravities are pulling equally on the central point, it will not move."
+align = 1
+valign = 1
+autowrap = true
 
 [editable path="Sun1"]
 [editable path="Sun2"]

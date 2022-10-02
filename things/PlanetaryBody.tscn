@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/gravity_2d/GravityBody2D.gd" type="Script" id=1]
-[ext_resource path="res://Things/Circle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://things/CustomTrail2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://things/Circle.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=5]
 
@@ -14,3 +15,7 @@ shape = SubResource( 5 )
 
 [node name="Circle" parent="." instance=ExtResource( 3 )]
 color = Color( 1, 1, 1, 1 )
+
+[node name="CustomTrail2D" parent="." instance=ExtResource( 2 )]
+width = 5.0
+default_color = Color( 0, 0, 0, 1 )
