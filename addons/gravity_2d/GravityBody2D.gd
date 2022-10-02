@@ -9,8 +9,11 @@ var group = "gravity_2d_bodies"
 func _ready():
 	self.add_to_group(group)
 	
-func _process(delta):
-	self.apply_impulse(Vector2.ZERO, gravity_from_all_bodies() * delta)
+#func _physics_process(delta):
+	#self.apply_impulse(Vector2.ZERO, gravity_from_all_bodies() * delta)
+
+func _integrate_forces(state):
+	self.applied_force = gravity_from_all_bodies()
 	
 func find_all_bodies(node: Node):
 	var bodies = []
@@ -32,7 +35,7 @@ func gravity_from_all_bodies():
 	for body in bodies:
 		if body != self:
 			# Check if the collision layer/masks collide.
-			if self.collision_layer & body.collision_mask:
+			if self.collision_mask & body.collision_layer:
 				var acc = gravity_for_single_body(body)/mass
 				acceleration += acc
 	
@@ -48,6 +51,3 @@ func gravity_for_single_body(body: CollisionObject2D):
 	var vector = (body.position - position).normalized()
 	var force_vector = force * vector
 	return force_vector
-
-#func _integrate_forces(state):
-#	self.apply_impulse(Vector2.ZERO, gravity_from_all_bodies())

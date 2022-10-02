@@ -11,7 +11,7 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="Sun" parent="." instance=ExtResource( 1 )]
-collision_mask = 3
+collision_mask = 6
 mass = 500.0
 
 [node name="CollisionShape" parent="Sun" index="0"]
@@ -22,13 +22,14 @@ radius = 100.0
 
 [node name="Feather" parent="." instance=ExtResource( 1 )]
 position = Vector2( -500, 0 )
+collision_layer = 2
 mass = 1.0
 
 [node name="Hammer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 500, 0 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
 mass = 10.0
+can_sleep = false
 
 [node name="RichTextLabel" type="Label" parent="."]
 margin_left = -450.0
