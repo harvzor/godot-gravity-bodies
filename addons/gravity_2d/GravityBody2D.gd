@@ -44,7 +44,7 @@ func gravity_from_all_bodies():
 	# Seems to fix issue with larger objects not accelarating as fast as they should.
 	# Necessary because the force of gravity is calculated as if the object that's being acted on has a mass of 1.
 	var mass_squared = mass * mass
-	return acceleration * mass_squared
+	return acceleration * mass_squared * self.gravity_scale
 
 func gravity_for_single_body(body: CollisionObject2D):
 	#var distance = position.distance_to(body.position)

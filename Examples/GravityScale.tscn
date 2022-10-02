@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Things/PlanetaryBody.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Space" type="Node"]
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="Sun" parent="." instance=ExtResource( 1 )]
+collision_mask = 6
+mode = 1
+mass = 500.0
+
+[node name="CollisionShape" parent="Sun" index="0"]
+scale = Vector2( 10, 10 )
+
+[node name="Circle" parent="Sun" index="1"]
+radius = 100.0
+
+[node name="Planet1" parent="." instance=ExtResource( 1 )]
+position = Vector2( -500, 0 )
+collision_layer = 2
+mass = 1.0
+
+[node name="RichTextLabel" type="Label" parent="Planet1"]
+margin_left = -360.0
+margin_top = -75.0
+margin_right = -240.0
+margin_bottom = -25.0
+rect_scale = Vector2( 3, 3 )
+theme = SubResource( 1 )
+text = "Gravity Scale 1"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Planet2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 500, 0 )
+collision_layer = 4
+mass = 1.0
+gravity_scale = 2.0
+can_sleep = false
+
+[node name="RichTextLabel" type="Label" parent="Planet2"]
+margin_top = -75.0
+margin_right = 120.0
+margin_bottom = -25.0
+rect_scale = Vector2( 3, 3 )
+theme = SubResource( 1 )
+text = "Gravity Scale 2"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="RichTextLabel" type="Label" parent="."]
+margin_left = -450.0
+margin_top = -600.0
+margin_right = -150.0
+margin_bottom = -450.0
+rect_scale = Vector2( 3, 3 )
+theme = SubResource( 1 )
+text = "Gravity Scale can be applied to a body.
+
+This will multiply the acceleration."
+align = 1
+valign = 1
+autowrap = true
+
+[editable path="Sun"]
+[editable path="Planet1"]
+[editable path="Planet2"]
