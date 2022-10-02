@@ -1,9 +1,8 @@
 extends RigidBody2D
 
-#var gravity = 6.6743 * pow(10,-11) # realistic gravity
-var gravity = 5000
+#export var gravity = 6.6743 * pow(10,-11) # realistic gravity
+export var gravity = 5000.0
 #export var mass = 0.0
-var velocity = Vector2.ZERO
 var group = "gravity_2d_bodies"
 
 func _ready():
@@ -29,7 +28,6 @@ func find_all_bodies(node: Node):
 			bodies.append_array(find_all_bodies(sub_node))
 			
 	return bodies
-	
 
 func gravity_from_all_bodies():
 	var acceleration = Vector2.ZERO
