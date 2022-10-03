@@ -97,6 +97,10 @@ https://user-images.githubusercontent.com/7733459/193590718-14ff0a69-355d-4895-9
 - the performance of this plugin is likely to be far worse than the built-in gravity
 - Gravity Distance Scale feels pretty broken
 
+## Mentions
+
+Many thanks to https://github.com/ApocalypticPhosphorus/Godot-3D-Gravity as a base to start from.
+
 ## Further development
 
 Feel free to submit issues / pull requests though I (the maintainer) will likely have moved on from this project.
