@@ -72,5 +72,18 @@ These examples can be tested by running them from the `./examples` folder.
 
 https://user-images.githubusercontent.com/7733459/193588358-45dd3faf-88bb-4827-8abc-62a8ce514f36.mp4
 
+### BinarySystem
 
+https://user-images.githubusercontent.com/7733459/193589348-c8c3e7c3-a17a-4018-a95c-6153b31cfd7f.mp4
 
+### FallTest
+
+https://user-images.githubusercontent.com/7733459/193589621-6d234d04-9083-4446-959b-319bcdd26a78.mp4
+
+### GravityDistanceScale
+
+https://user-images.githubusercontent.com/7733459/193590492-e43ade1d-034b-4745-aeea-ca86c97e57b1.mp4
+
+### GravityScale
+
+https://user-images.githubusercontent.com/7733459/193590718-14ff0a69-355d-4895-96d7-abc85c0d3507.mp4
