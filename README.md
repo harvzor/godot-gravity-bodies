@@ -64,6 +64,10 @@ Similar to changing how much this node pulls on other gravity bodies.
 
 Multiplies the gravity applied to this body.
 
+#### Collision Layers and Masks
+
+Different bodies can be placed on different collision layers / masks to change which bodies attract each other.
+
 ## Examples
 
 These examples can be tested by running them from the `./examples` folder.
@@ -87,3 +91,14 @@ https://user-images.githubusercontent.com/7733459/193590492-e43ade1d-034b-4745-a
 ### GravityScale
 
 https://user-images.githubusercontent.com/7733459/193590718-14ff0a69-355d-4895-96d7-abc85c0d3507.mp4
+
+## Caveats
+
+- the performance of this plugin is likely to be far worse than the built-in gravity
+- Gravity Distance Scale feels pretty broken
+
+## Further development
+
+Feel free to submit issues / pull requests though I (the maintainer) will likely have moved on from this project.
+
+The code could quite easily be modified to work in 3D (but I have no need for that right now).
