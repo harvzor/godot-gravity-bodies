@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://things/PlanetaryBody.tscn" type="PackedScene" id=1]
-[ext_resource path="res://examples/VelocityText.gd" type="Script" id=2]
+[ext_resource path="res://things/VelocityText.gd" type="Script" id=2]
 
 [sub_resource type="Theme" id=1]
 
@@ -29,7 +29,7 @@ linear_velocity = Vector2( 0, 200 )
 gravity = 1.0
 gravity_distance_scale = 0.0
 
-[node name="RichTextLabel" type="Label" parent="Planet1"]
+[node name="VelocityLabel" type="Label" parent="Planet1"]
 margin_top = -75.0
 margin_right = 120.0
 margin_bottom = -25.0

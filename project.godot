@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/trails/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/gravity_bodies/plugin.cfg", "res://addons/trails/plugin.cfg" )
 
 [gui]
 
