@@ -70,4 +70,7 @@ These examples can be tested by running them from the `./examples` folder.
 
 ### SolSystem
 
-<video src='solsystem.mp4' width=180/>
+https://user-images.githubusercontent.com/7733459/193588358-45dd3faf-88bb-4827-8abc-62a8ce514f36.mp4
+
+
+
