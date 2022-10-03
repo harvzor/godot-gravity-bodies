@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.svg-9199dc252467c22a6dff468c32edee91.stex"
+path="res://.import/icon.svg-ebee9a6c0cd61deb65f97d5af1e9950d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gravity_2d/icon.svg"
-dest_files=[ "res://.import/icon.svg-9199dc252467c22a6dff468c32edee91.stex" ]
+source_file="res://addons/gravity_bodies/icon.svg"
+dest_files=[ "res://.import/icon.svg-ebee9a6c0cd61deb65f97d5af1e9950d.stex" ]
 
 [params]
 
